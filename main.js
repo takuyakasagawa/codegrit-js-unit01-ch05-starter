@@ -2,9 +2,11 @@
 function playingAdd(e) { 
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  console.log(audio);
   //クラス属性playingの記述
   key.classList.add('playing');
+  //audioの記述
+  audio.play();
+  audio.currentTime = 0;
 }
 window.addEventListener('keydown', playingAdd);
 //関数playingAddをイベントを呼び出す記述の中で呼び出す

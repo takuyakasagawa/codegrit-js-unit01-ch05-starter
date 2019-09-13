@@ -5,9 +5,15 @@ function playingAdd(e) {
   //クラス属性playingの記述
   key.classList.add('playing');
   //audioの記述
+  if (!audio) return;
   audio.play();
   audio.currentTime = 0;
 }
 window.addEventListener('keydown', playingAdd);
-//関数playingAddをイベントを呼び出す記述の中で呼び出す
 // 2つ目の関数:キーボードが離れたら音が消えて赤枠が消える
+function playingRemove(e) { 
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  //クラス属性playingの記述
+  key.classList.remove('playing');
+}
+window.addEventListener('keyup', playingRemove);

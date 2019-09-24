@@ -11,8 +11,8 @@ function playingAdd(e) {
 }
 window.addEventListener('keydown', playingAdd);
 // 2つ目の関数:キーボードが離れたら音が消えて赤枠が消える
-function playingRemove() { 
-  const key = document.getElementsByClassName(`key`);
-  key.classList.remove('playing');
+const playingRemove = document.getElementsByTagName('.key');
+for (let keys of playingRemove) {
+  keys.classList.remove('playing'); // クラスをremoveする
 }
 window.addEventListener('keyup', playingRemove);
